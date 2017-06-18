@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="ISO-8859-1" />
+<title>Registration Here</title>
+<link rel="stylesheet" th:href="@{/css/style.css}" />
+<script src="https://www.google.com/recaptcha/api.js"></script>
+</head>
+<!-- th:src="@{/images/logout.png}"  -->
+<body background="/images/graphic.jpg">
+	<h1 class="register-title">Sriman-Java-Gyan-Mantra</h1>
+	<p align="center" style="color: yellow;" th:text="${message}"></p>
+	<form class="register" action="/register" method="post">
+		<p align="center" style="color: red;" th:text="${ErrorMessage}"></p>
+		<div class="register-switch">
+			<input type="radio" name="sex" value="Female" id="sex_f"
+				class="register-switch-input" checked="checked" /> <label
+				for="sex_f" class="register-switch-label">Female</label> <input
+				type="radio" name="sex" value="Male" id="sex_m"
+				class="register-switch-input" /> <label for="sex_m"
+				class="register-switch-label">Male</label>
+		</div>
+		<input type="email" class="register-input" placeholder="Email address"
+			name="email" /> <input type="password" class="register-input"
+			placeholder="Password" name="password" /> <input type="password"
+			class="register-input" placeholder="Confirm Password"
+			name="confirmPassword" />
+		<div class="g-recaptcha"
+			data-sitekey="6LduSB4UAAAAAGntBkhIOPfbx_T2HDrHPk8qMgJi"></div>
+		<input type="submit" value="Create Account" class="register-button" />
+	</form>
+</body>
+</html>
